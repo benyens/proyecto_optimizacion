@@ -1,5 +1,5 @@
 
-```markdown
+
 # Proyecto de Optimización - Grupo 6
 
 Este repositorio contiene el proyecto de optimización desarrollado por el Grupo 6. El objetivo de este proyecto es asignar asignaturas a salas y bloques horarios en base a diferentes restricciones y maximizar la prioridad total de las asignaturas asignadas.
