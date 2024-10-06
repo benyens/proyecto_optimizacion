@@ -40,7 +40,7 @@ Esto generará un archivo `.dzn` con los datos de la instancia, que luego puede 
 
 ### Ejecutar el Modelo
 
-Una vez generadas las instancias, puedes ejecutar el modelo utilizando MiniZinc. Desde la línea de comandos:
+Una vez generadas las instancias, puedes ejecutar el modelo utilizando MiniZinc con el solver COIN-BC . Desde la línea de comandos:
 
 ```bash
 minizinc modeloxd.mzn instancia_mediana.dzn
