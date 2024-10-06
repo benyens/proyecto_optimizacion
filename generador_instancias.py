@@ -21,7 +21,7 @@ def generar_instancia_A1B2(instancia, num_asignaturas, num_salas, num_profesores
     bloques_necesarios = []
     tipo_asignatura = []
     profesor = []
-    interes_curso = []  # Tamaño del curso según el interés de los alumnos
+    interes_curso = []  #
 
     # Capacidad de las salas y tamaño del curso según A = 1
     capacidad_salas = [random.randint(20, 45) for _ in range(num_salas)]
@@ -69,35 +69,22 @@ def generar_instancia_A1B2(instancia, num_asignaturas, num_salas, num_profesores
     with open(dzn_file_name, 'w') as f:
         f.write(f"D = {D};\n")
         f.write(f"B = {B_TOTAL};\n")
-        f.write(f"T = {T};\n")  # Definir correctamente T en el archivo .dzn
+        f.write(f"T = {T};\n") 
         f.write(f"num_salas = {num_salas};\n")
         f.write(f"num_asignaturas = {num_asignaturas};\n")
         f.write(f"num_profesores = {num_profesores};\n")
 
-        # Escribir el array de prioridad
         f.write(f"prioridad = [{', '.join(map(str, prioridad))}];\n")
-
-        # Escribir el array de bloques_necesarios
         f.write(f"bloques_necesarios = [{', '.join(map(str, bloques_necesarios))}];\n")
-
-        # Escribir el array de tipo_asignatura
         f.write(f"tipo_asignatura = [{', '.join(map(str, tipo_asignatura))}];\n")
-
-        # Escribir el array de profesor asignado
         f.write(f"profesor = [{', '.join(map(str, profesor))}];\n")
-
-        # Escribir el array de interés del curso
         f.write(f"interes_curso = [{', '.join(map(str, interes_curso))}];\n")
-
-        # Escribir la disponibilidad de los profesores como array2d
         f.write("disponibilidad_profesor = array2d(1..num_profesores, 1..T, [")
         for i, disp in enumerate(disponibilidad_profesor):
             if i > 0:
                 f.write(", ")
             f.write(", ".join(map(str, disp)))
         f.write("]);\n")
-
-        # Escribir el array de capacidad de las salas
         f.write(f"capacidad_salas = [{', '.join(map(str, capacidad_salas))}];\n")
 
     print(f"Instancia '{dzn_file_name}' generada con éxito!")
